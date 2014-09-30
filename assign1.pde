@@ -10,7 +10,12 @@ int h = 50;
 // declare variables
 // --------------------------------------------
 // put your code inside here
-int totalScore = 0;
+
+int totalScore = 500;
+int a;
+int b;
+int c;
+
 
 // --------------------------------------------
 
@@ -48,6 +53,7 @@ void draw() {
       // start rolling
       // -------------------------------------------------
       // put your code inside here
+       totalScore=totalScore-50;
       
       
       // -------------------------------------------------
@@ -62,6 +68,15 @@ void draw() {
       // stop rolling
       // -------------------------------------------------
       // put your code inside here
+        a=int (random(5));
+  b=int (random(5));
+  c=int (random(5));  
+      
+ machine.setSlotFruit(0,a);
+ machine.setSlotFruit(1,b);
+ machine.setSlotFruit(2,c);
+ 
+ totalScore=machine.getSlotScore(0)+ machine.getSlotScore(1)+ machine.getSlotScore(2)+totalScore;
       
  
  
