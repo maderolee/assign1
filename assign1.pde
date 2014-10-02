@@ -68,7 +68,7 @@ void draw() {
       // stop rolling
       // -------------------------------------------------
       // put your code inside here
-        a=int (random(5));
+  a=int (random(5));
   b=int (random(5));
   c=int (random(5));  
       
@@ -76,7 +76,16 @@ void draw() {
  machine.setSlotFruit(1,b);
  machine.setSlotFruit(2,c);
  
- totalScore=machine.getSlotScore(0)+ machine.getSlotScore(1)+ machine.getSlotScore(2)+totalScore;
+ totalScore=machine.getFruitCount(a)* machine.getSlotScore(0)+ 
+ machine.getFruitCount(b)*machine.getSlotScore(1)+
+ machine.getFruitCount(c)*machine.getSlotScore(2)+
+ totalScore;
+ 
+int result= machine.probability(0.1);
+result=machine.getFruitCount(0);
+int m = machine.getFruitCount(0);
+m=3;
+ 
       
  
  
