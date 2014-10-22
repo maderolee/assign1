@@ -68,29 +68,36 @@ void draw() {
       // stop rolling
       // -------------------------------------------------
       // put your code inside here
-  a=int (random(5));
-  b=int (random(5));
-  c=int (random(5));  
+     
+      
+      int result;
+      result=machine.probability(0.1);
+      
+      if(result==1){
+        machine.setSlotFruit(0,0);
+        machine.setSlotFruit(1,0);
+        machine.setSlotFruit(2,0);
+      }
+      else{
+        
+  a=int (random(6));
+  b=int (random(6));
+  c=int (random(6));  
       
  machine.setSlotFruit(0,a);
  machine.setSlotFruit(1,b);
  machine.setSlotFruit(2,c);
  
- totalScore=machine.getFruitCount(a)* machine.getSlotScore(0)+ 
- machine.getFruitCount(b)*machine.getSlotScore(1)+
- machine.getFruitCount(c)*machine.getSlotScore(2)+
- totalScore;
+ totalScore= machine.getSlotScore(a)*machine.getFruitCount(a)+
+           machine.getSlotScore(b)*machine.getFruitCount(b)+
+           machine.getSlotScore(c)*machine.getFruitCount(c)+totalScore;
  
-int result= machine.probability(0.1);
-result=machine.getFruitCount(0);
-int m = machine.getFruitCount(0);
-m=3;
- 
+
       
  
  
  
-      
+      }
       // -------------------------------------------------
     }
     machine.stop();
@@ -107,10 +114,3 @@ void mousePressed() {
     button = !button;
   }  
 }
-
-
-
-
-
-
-
